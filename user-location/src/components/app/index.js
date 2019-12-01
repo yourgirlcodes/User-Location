@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-// import Map from '../map';
+import Map from '../map';
 import axios from 'axios';
 
 function App() {
@@ -15,15 +15,19 @@ function App() {
   }, [])
 
 
-
   return (
-    <div className="App">
-      <h1>
-      {location.city}
-      {location.country_name}
-      </h1>
-      {/* <Map data={location}/> */}
-    </div>
+	<div className="App">
+		<h1>
+			You are here: &nbsp;
+			{location.city}, &nbsp;
+			{location.country_name} &nbsp;
+			{location.emoji_flag}
+		</h1>
+		<Map 
+			city={location.city}
+			country={location.country_name}
+		/>
+	</div>
   );
 }
 
